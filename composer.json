@@ -21,7 +21,7 @@
         "wpwhales/macroable": "dev-master",
         "wpwhales/support": "dev-master",
         "wpwhales/view": "dev-master",
-        "laravel/prompts": "^0.1",
+        "laravel/prompts": "dev-master",
         "nunomaduro/termwind": "^1.13",
         "symfony/console": "^6.3",
         "symfony/process": "^6.3"
