@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Console\Contracts;
+namespace WPWhales\Console\Contracts;
 
 interface NewLineAware
 {

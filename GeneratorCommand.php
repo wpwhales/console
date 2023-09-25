@@ -1,11 +1,11 @@
 <?php
 
-namespace Illuminate\Console;
+namespace WPWhales\Console;
 
-use Illuminate\Console\Concerns\CreatesMatchingTest;
-use Illuminate\Contracts\Console\PromptsForMissingInput;
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Str;
+use WPWhales\Console\Concerns\CreatesMatchingTest;
+use WPWhales\Contracts\Console\PromptsForMissingInput;
+use WPWhales\Filesystem\Filesystem;
+use WPWhales\Support\Str;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Finder\Finder;
 
@@ -14,7 +14,7 @@ abstract class GeneratorCommand extends Command implements PromptsForMissingInpu
     /**
      * The filesystem instance.
      *
-     * @var \Illuminate\Filesystem\Filesystem
+     * @var \WPWhales\Filesystem\Filesystem
      */
     protected $files;
 
@@ -118,7 +118,7 @@ abstract class GeneratorCommand extends Command implements PromptsForMissingInpu
     /**
      * Create a new controller creator command instance.
      *
-     * @param  \Illuminate\Filesystem\Filesystem  $files
+     * @param  \WPWhales\Filesystem\Filesystem  $files
      * @return void
      */
     public function __construct(Filesystem $files)
@@ -144,7 +144,7 @@ abstract class GeneratorCommand extends Command implements PromptsForMissingInpu
      *
      * @return bool|null
      *
-     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     * @throws \WPWhales\Contracts\Filesystem\FileNotFoundException
      */
     public function handle()
     {
@@ -328,7 +328,7 @@ abstract class GeneratorCommand extends Command implements PromptsForMissingInpu
      * @param  string  $name
      * @return string
      *
-     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     * @throws \WPWhales\Contracts\Filesystem\FileNotFoundException
      */
     protected function buildClass($name)
     {

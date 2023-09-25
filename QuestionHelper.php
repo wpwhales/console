@@ -1,8 +1,8 @@
 <?php
 
-namespace Illuminate\Console;
+namespace WPWhales\Console;
 
-use Illuminate\Console\View\Components\TwoColumnDetail;
+use WPWhales\Console\View\Components\TwoColumnDetail;
 use Symfony\Component\Console\Formatter\OutputFormatter;
 use Symfony\Component\Console\Helper\SymfonyQuestionHelper;
 use Symfony\Component\Console\Output\OutputInterface;

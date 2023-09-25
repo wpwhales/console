@@ -1,5 +1,5 @@
 {
-    "name": "illuminate/console",
+    "name": "wpwhales/console",
     "description": "The Illuminate Console package.",
     "license": "MIT",
     "homepage": "https://laravel.com",
@@ -16,11 +16,11 @@
     "require": {
         "php": "^8.2",
         "ext-mbstring": "*",
-        "illuminate/collections": "^11.0",
-        "illuminate/contracts": "^11.0",
-        "illuminate/macroable": "^11.0",
-        "illuminate/support": "^11.0",
-        "illuminate/view": "^11.0",
+        "wpwhales/collections": "dev-master",
+        "wpwhales/contracts": "dev-master",
+        "wpwhales/macroable": "dev-master",
+        "wpwhales/support": "dev-master",
+        "wpwhales/view": "dev-master",
         "laravel/prompts": "^0.1",
         "nunomaduro/termwind": "^1.13",
         "symfony/console": "^6.3",
@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Illuminate\\Console\\": ""
+            "WPWhales\\Console\\": ""
         }
     },
     "extra": {
@@ -40,10 +40,10 @@
         "ext-pcntl": "Required to use signal trapping.",
         "dragonmantank/cron-expression": "Required to use scheduler (^3.3.2).",
         "guzzlehttp/guzzle": "Required to use the ping methods on schedules (^7.6).",
-        "illuminate/bus": "Required to use the scheduled job dispatcher (^11.0).",
-        "illuminate/container": "Required to use the scheduler (^11.0).",
-        "illuminate/filesystem": "Required to use the generator command (^11.0).",
-        "illuminate/queue": "Required to use closures for scheduled jobs (^11.0)."
+        "wpwhales/bus": "Required to use the scheduled job dispatcher (^11.0).",
+        "wpwhales/container": "Required to use the scheduler (^11.0).",
+        "wpwhales/filesystem": "Required to use the generator command (^11.0).",
+        "wpwhales/queue": "Required to use closures for scheduled jobs (^11.0)."
     },
     "config": {
         "sort-packages": true

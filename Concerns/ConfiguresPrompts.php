@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Console\Concerns;
+namespace WPWhales\Console\Concerns;
 
 use Laravel\Prompts\ConfirmPrompt;
 use Laravel\Prompts\MultiSelectPrompt;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Console\View\Components;
+namespace WPWhales\Console\View\Components;
 
 use InvalidArgumentException;
 
@@ -23,14 +23,14 @@ class Factory
     /**
      * The output interface implementation.
      *
-     * @var \Illuminate\Console\OutputStyle
+     * @var \WPWhales\Console\OutputStyle
      */
     protected $output;
 
     /**
      * Creates a new factory instance.
      *
-     * @param  \Illuminate\Console\OutputStyle  $output
+     * @param  \WPWhales\Console\OutputStyle  $output
      * @return void
      */
     public function __construct($output)
@@ -49,7 +49,7 @@ class Factory
      */
     public function __call($method, $parameters)
     {
-        $component = '\Illuminate\Console\View\Components\\'.ucfirst($method);
+        $component = '\WPWhales\Console\View\Components\\'.ucfirst($method);
 
         throw_unless(class_exists($component), new InvalidArgumentException(sprintf(
             'Console component [%s] not found.', $method

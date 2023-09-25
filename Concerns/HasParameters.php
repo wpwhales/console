@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Console\Concerns;
+namespace WPWhales\Console\Concerns;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;

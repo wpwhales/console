@@ -1,12 +1,12 @@
 <?php
 
-namespace Illuminate\Console;
+namespace WPWhales\Console;
 
 use Carbon\CarbonInterval;
-use Illuminate\Cache\DynamoDbStore;
-use Illuminate\Contracts\Cache\Factory as Cache;
-use Illuminate\Contracts\Cache\LockProvider;
-use Illuminate\Support\InteractsWithTime;
+use WPWhales\Cache\DynamoDbStore;
+use WPWhales\Contracts\Cache\Factory as Cache;
+use WPWhales\Contracts\Cache\LockProvider;
+use WPWhales\Support\InteractsWithTime;
 
 class CacheCommandMutex implements CommandMutex
 {
@@ -15,7 +15,7 @@ class CacheCommandMutex implements CommandMutex
     /**
      * The cache factory implementation.
      *
-     * @var \Illuminate\Contracts\Cache\Factory
+     * @var \WPWhales\Contracts\Cache\Factory
      */
     public $cache;
 
@@ -29,7 +29,7 @@ class CacheCommandMutex implements CommandMutex
     /**
      * Create a new command mutex.
      *
-     * @param  \Illuminate\Contracts\Cache\Factory  $cache
+     * @param  \WPWhales\Contracts\Cache\Factory  $cache
      */
     public function __construct(Cache $cache)
     {
@@ -39,7 +39,7 @@ class CacheCommandMutex implements CommandMutex
     /**
      * Attempt to obtain a command mutex for the given command.
      *
-     * @param  \Illuminate\Console\Command  $command
+     * @param  \WPWhales\Console\Command  $command
      * @return bool
      */
     public function create($command)
@@ -63,7 +63,7 @@ class CacheCommandMutex implements CommandMutex
     /**
      * Determine if a command mutex exists for the given command.
      *
-     * @param  \Illuminate\Console\Command  $command
+     * @param  \WPWhales\Console\Command  $command
      * @return bool
      */
     public function exists($command)
@@ -86,7 +86,7 @@ class CacheCommandMutex implements CommandMutex
     /**
      * Release the mutex for the given command.
      *
-     * @param  \Illuminate\Console\Command  $command
+     * @param  \WPWhales\Console\Command  $command
      * @return bool
      */
     public function forget($command)
@@ -103,7 +103,7 @@ class CacheCommandMutex implements CommandMutex
     /**
      * Get the isolatable command mutex name.
      *
-     * @param  \Illuminate\Console\Command  $command
+     * @param  \WPWhales\Console\Command  $command
      * @return string
      */
     protected function commandMutexName($command)
@@ -131,7 +131,7 @@ class CacheCommandMutex implements CommandMutex
     /**
      * Determine if the given store should use locks for command mutexes.
      *
-     * @param  \Illuminate\Contracts\Cache\Store  $store
+     * @param  \WPWhales\Contracts\Cache\Store  $store
      * @return bool
      */
     protected function shouldUseLocks($store)

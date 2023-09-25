@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Console;
+namespace WPWhales\Console;
 
 use InvalidArgumentException;
 use Symfony\Component\Console\Input\InputArgument;

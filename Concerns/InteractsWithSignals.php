@@ -1,16 +1,16 @@
 <?php
 
-namespace Illuminate\Console\Concerns;
+namespace WPWhales\Console\Concerns;
 
-use Illuminate\Console\Signals;
-use Illuminate\Support\Arr;
+use WPWhales\Console\Signals;
+use WPWhales\Support\Arr;
 
 trait InteractsWithSignals
 {
     /**
      * The signal registrar instance.
      *
-     * @var \Illuminate\Console\Signals|null
+     * @var \WPWhales\Console\Signals|null
      */
     protected $signals;
 

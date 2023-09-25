@@ -1,9 +1,9 @@
 <?php
 
-namespace Illuminate\Console\View\Components;
+namespace WPWhales\Console\View\Components;
 
-use Illuminate\Console\OutputStyle;
-use Illuminate\Console\QuestionHelper;
+use WPWhales\Console\OutputStyle;
+use WPWhales\Console\QuestionHelper;
 use ReflectionClass;
 use Symfony\Component\Console\Helper\SymfonyQuestionHelper;
 
@@ -15,7 +15,7 @@ abstract class Component
     /**
      * The output style implementation.
      *
-     * @var \Illuminate\Console\OutputStyle
+     * @var \WPWhales\Console\OutputStyle
      */
     protected $output;
 
@@ -29,7 +29,7 @@ abstract class Component
     /**
      * Creates a new component instance.
      *
-     * @param  \Illuminate\Console\OutputStyle  $output
+     * @param  \WPWhales\Console\OutputStyle  $output
      * @return void
      */
     public function __construct($output)
@@ -41,7 +41,7 @@ abstract class Component
      * Renders the given view.
      *
      * @param  string  $view
-     * @param  \Illuminate\Contracts\Support\Arrayable|array  $data
+     * @param  \WPWhales\Contracts\Support\Arrayable|array  $data
      * @param  int  $verbosity
      * @return void
      */

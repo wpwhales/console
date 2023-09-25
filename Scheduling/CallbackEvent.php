@@ -1,9 +1,9 @@
 <?php
 
-namespace Illuminate\Console\Scheduling;
+namespace WPWhales\Console\Scheduling;
 
-use Illuminate\Contracts\Container\Container;
-use Illuminate\Support\Reflector;
+use WPWhales\Contracts\Container\Container;
+use WPWhales\Support\Reflector;
 use InvalidArgumentException;
 use LogicException;
 use RuntimeException;
@@ -42,7 +42,7 @@ class CallbackEvent extends Event
     /**
      * Create a new event instance.
      *
-     * @param  \Illuminate\Console\Scheduling\EventMutex  $mutex
+     * @param  \WPWhales\Console\Scheduling\EventMutex  $mutex
      * @param  string|callable  $callback
      * @param  array  $parameters
      * @param  \DateTimeZone|string|null  $timezone
@@ -67,7 +67,7 @@ class CallbackEvent extends Event
     /**
      * Run the callback event.
      *
-     * @param  \Illuminate\Contracts\Container\Container  $container
+     * @param  \WPWhales\Contracts\Container\Container  $container
      * @return mixed
      *
      * @throws \Throwable
@@ -108,7 +108,7 @@ class CallbackEvent extends Event
     /**
      * Run the callback.
      *
-     * @param  \Illuminate\Contracts\Container\Container  $container
+     * @param  \WPWhales\Contracts\Container\Container  $container
      * @return int
      */
     protected function execute($container)

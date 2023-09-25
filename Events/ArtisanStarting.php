@@ -1,20 +1,20 @@
 <?php
 
-namespace Illuminate\Console\Events;
+namespace WPWhales\Console\Events;
 
 class ArtisanStarting
 {
     /**
      * The Artisan application instance.
      *
-     * @var \Illuminate\Console\Application
+     * @var \WPWhales\Console\Application
      */
     public $artisan;
 
     /**
      * Create a new event instance.
      *
-     * @param  \Illuminate\Console\Application  $artisan
+     * @param  \WPWhales\Console\Application  $artisan
      * @return void
      */
     public function __construct($artisan)

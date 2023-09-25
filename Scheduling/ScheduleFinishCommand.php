@@ -1,10 +1,10 @@
 <?php
 
-namespace Illuminate\Console\Scheduling;
+namespace WPWhales\Console\Scheduling;
 
-use Illuminate\Console\Command;
-use Illuminate\Console\Events\ScheduledBackgroundTaskFinished;
-use Illuminate\Contracts\Events\Dispatcher;
+use WPWhales\Console\Command;
+use WPWhales\Console\Events\ScheduledBackgroundTaskFinished;
+use WPWhales\Contracts\Events\Dispatcher;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'schedule:finish')]
@@ -34,7 +34,7 @@ class ScheduleFinishCommand extends Command
     /**
      * Execute the console command.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @param  \WPWhales\Console\Scheduling\Schedule  $schedule
      * @return void
      */
     public function handle(Schedule $schedule)

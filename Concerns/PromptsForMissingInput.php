@@ -1,9 +1,9 @@
 <?php
 
-namespace Illuminate\Console\Concerns;
+namespace WPWhales\Console\Concerns;
 
 use Closure;
-use Illuminate\Contracts\Console\PromptsForMissingInput as PromptsForMissingInputContract;
+use WPWhales\Contracts\Console\PromptsForMissingInput as PromptsForMissingInputContract;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 

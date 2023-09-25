@@ -1,8 +1,8 @@
 <?php
 
-namespace Illuminate\Console\View\Components;
+namespace WPWhales\Console\View\Components;
 
-use Illuminate\Console\Contracts\NewLineAware;
+use WPWhales\Console\Contracts\NewLineAware;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class Line extends Component

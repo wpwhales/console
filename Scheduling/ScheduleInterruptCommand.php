@@ -1,10 +1,10 @@
 <?php
 
-namespace Illuminate\Console\Scheduling;
+namespace WPWhales\Console\Scheduling;
 
-use Illuminate\Console\Command;
-use Illuminate\Contracts\Cache\Repository as Cache;
-use Illuminate\Support\Facades\Date;
+use WPWhales\Console\Command;
+use WPWhales\Contracts\Cache\Repository as Cache;
+use WPWhales\Support\Facades\Date;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'schedule:interrupt')]
@@ -27,14 +27,14 @@ class ScheduleInterruptCommand extends Command
     /**
      * The cache store implementation.
      *
-     * @var \Illuminate\Contracts\Cache\Repository
+     * @var \WPWhales\Contracts\Cache\Repository
      */
     protected $cache;
 
     /**
      * Create a new schedule interrupt command.
      *
-     * @param  \Illuminate\Contracts\Cache\Repository  $cache
+     * @param  \WPWhales\Contracts\Cache\Repository  $cache
      * @return void
      */
     public function __construct(Cache $cache)
@@ -51,7 +51,7 @@ class ScheduleInterruptCommand extends Command
      */
     public function handle()
     {
-        $this->cache->put('illuminate:schedule:interrupt', true, Date::now()->endOfMinute());
+        $this->cache->put('WPWhales:schedule:interrupt', true, Date::now()->endOfMinute());
 
         $this->components->info('Broadcasting schedule interrupt signal.');
     }

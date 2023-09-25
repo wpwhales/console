@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Console\View\Components\Mutators;
+namespace WPWhales\Console\View\Components\Mutators;
 
 class EnsureDynamicContentIsHighlighted
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Console\View\Components;
+namespace WPWhales\Console\View\Components;
 
 use Symfony\Component\Console\Output\OutputInterface;
 

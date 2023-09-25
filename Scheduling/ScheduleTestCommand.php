@@ -1,9 +1,9 @@
 <?php
 
-namespace Illuminate\Console\Scheduling;
+namespace WPWhales\Console\Scheduling;
 
-use Illuminate\Console\Application;
-use Illuminate\Console\Command;
+use WPWhales\Console\Application;
+use WPWhales\Console\Command;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 use function Laravel\Prompts\select;
@@ -28,7 +28,7 @@ class ScheduleTestCommand extends Command
     /**
      * Execute the console command.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @param  \WPWhales\Console\Scheduling\Schedule  $schedule
      * @return void
      */
     public function handle(Schedule $schedule)

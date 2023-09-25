@@ -1,20 +1,20 @@
 <?php
 
-namespace Illuminate\Console\Scheduling;
+namespace WPWhales\Console\Scheduling;
 
 use Closure;
 use DateTimeInterface;
-use Illuminate\Bus\UniqueLock;
-use Illuminate\Console\Application;
-use Illuminate\Container\Container;
-use Illuminate\Contracts\Bus\Dispatcher;
-use Illuminate\Contracts\Cache\Repository as Cache;
-use Illuminate\Contracts\Container\BindingResolutionException;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\CallQueuedClosure;
-use Illuminate\Support\ProcessUtils;
-use Illuminate\Support\Traits\Macroable;
+use WPWhales\Bus\UniqueLock;
+use WPWhales\Console\Application;
+use WPWhales\Container\Container;
+use WPWhales\Contracts\Bus\Dispatcher;
+use WPWhales\Contracts\Cache\Repository as Cache;
+use WPWhales\Contracts\Container\BindingResolutionException;
+use WPWhales\Contracts\Queue\ShouldBeUnique;
+use WPWhales\Contracts\Queue\ShouldQueue;
+use WPWhales\Queue\CallQueuedClosure;
+use WPWhales\Support\ProcessUtils;
+use WPWhales\Support\Traits\Macroable;
 use RuntimeException;
 
 class Schedule
@@ -38,21 +38,21 @@ class Schedule
     /**
      * All of the events on the schedule.
      *
-     * @var \Illuminate\Console\Scheduling\Event[]
+     * @var \WPWhales\Console\Scheduling\Event[]
      */
     protected $events = [];
 
     /**
      * The event mutex implementation.
      *
-     * @var \Illuminate\Console\Scheduling\EventMutex
+     * @var \WPWhales\Console\Scheduling\EventMutex
      */
     protected $eventMutex;
 
     /**
      * The scheduling mutex implementation.
      *
-     * @var \Illuminate\Console\Scheduling\SchedulingMutex
+     * @var \WPWhales\Console\Scheduling\SchedulingMutex
      */
     protected $schedulingMutex;
 
@@ -66,7 +66,7 @@ class Schedule
     /**
      * The job dispatcher implementation.
      *
-     * @var \Illuminate\Contracts\Bus\Dispatcher
+     * @var \WPWhales\Contracts\Bus\Dispatcher
      */
     protected $dispatcher;
 
@@ -91,7 +91,7 @@ class Schedule
 
         if (! class_exists(Container::class)) {
             throw new RuntimeException(
-                'A container implementation is required to use the scheduler. Please install the illuminate/container package.'
+                'A container implementation is required to use the scheduler. Please install the WPWhales/container package.'
             );
         }
 
@@ -111,7 +111,7 @@ class Schedule
      *
      * @param  string|callable  $callback
      * @param  array  $parameters
-     * @return \Illuminate\Console\Scheduling\CallbackEvent
+     * @return \WPWhales\Console\Scheduling\CallbackEvent
      */
     public function call($callback, array $parameters = [])
     {
@@ -127,7 +127,7 @@ class Schedule
      *
      * @param  string  $command
      * @param  array  $parameters
-     * @return \Illuminate\Console\Scheduling\Event
+     * @return \WPWhales\Console\Scheduling\Event
      */
     public function command($command, array $parameters = [])
     {
@@ -150,7 +150,7 @@ class Schedule
      * @param  object|string  $job
      * @param  string|null  $queue
      * @param  string|null  $connection
-     * @return \Illuminate\Console\Scheduling\CallbackEvent
+     * @return \WPWhales\Console\Scheduling\CallbackEvent
      */
     public function job($job, $queue = null, $connection = null)
     {
@@ -180,7 +180,7 @@ class Schedule
         if ($job instanceof Closure) {
             if (! class_exists(CallQueuedClosure::class)) {
                 throw new RuntimeException(
-                    'To enable support for closure jobs, please install the illuminate/queue package.'
+                    'To enable support for closure jobs, please install the WPWhales/queue package.'
                 );
             }
 
@@ -237,7 +237,7 @@ class Schedule
      *
      * @param  string  $command
      * @param  array  $parameters
-     * @return \Illuminate\Console\Scheduling\Event
+     * @return \WPWhales\Console\Scheduling\Event
      */
     public function exec($command, array $parameters = [])
     {
@@ -300,7 +300,7 @@ class Schedule
     /**
      * Determine if the server is allowed to run this event.
      *
-     * @param  \Illuminate\Console\Scheduling\Event  $event
+     * @param  \WPWhales\Console\Scheduling\Event  $event
      * @param  \DateTimeInterface  $time
      * @return bool
      */
@@ -312,8 +312,8 @@ class Schedule
     /**
      * Get all of the events on the schedule that are due.
      *
-     * @param  \Illuminate\Contracts\Foundation\Application  $app
-     * @return \Illuminate\Support\Collection
+     * @param  \WPWhales\Contracts\Foundation\Application  $app
+     * @return \WPWhales\Support\Collection
      */
     public function dueEvents($app)
     {
@@ -323,7 +323,7 @@ class Schedule
     /**
      * Get all of the events on the schedule.
      *
-     * @return \Illuminate\Console\Scheduling\Event[]
+     * @return \WPWhales\Console\Scheduling\Event[]
      */
     public function events()
     {
@@ -352,7 +352,7 @@ class Schedule
     /**
      * Get the job dispatcher, if available.
      *
-     * @return \Illuminate\Contracts\Bus\Dispatcher
+     * @return \WPWhales\Contracts\Bus\Dispatcher
      *
      * @throws \RuntimeException
      */
@@ -363,7 +363,7 @@ class Schedule
                 $this->dispatcher = Container::getInstance()->make(Dispatcher::class);
             } catch (BindingResolutionException $e) {
                 throw new RuntimeException(
-                    'Unable to resolve the dispatcher from the service container. Please bind it or install the illuminate/bus package.',
+                    'Unable to resolve the dispatcher from the service container. Please bind it or install the WPWhales/bus package.',
                     is_int($e->getCode()) ? $e->getCode() : 0, $e
                 );
             }

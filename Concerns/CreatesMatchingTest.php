@@ -1,8 +1,8 @@
 <?php
 
-namespace Illuminate\Console\Concerns;
+namespace WPWhales\Console\Concerns;
 
-use Illuminate\Support\Str;
+use WPWhales\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
 
 trait CreatesMatchingTest

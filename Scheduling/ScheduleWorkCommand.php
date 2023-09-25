@@ -1,10 +1,10 @@
 <?php
 
-namespace Illuminate\Console\Scheduling;
+namespace WPWhales\Console\Scheduling;
 
-use Illuminate\Console\Command;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\ProcessUtils;
+use WPWhales\Console\Command;
+use WPWhales\Support\Carbon;
+use WPWhales\Support\ProcessUtils;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;

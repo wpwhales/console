@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Console;
+namespace WPWhales\Console;
 
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Console\Command\Command;

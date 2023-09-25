@@ -1,13 +1,13 @@
 <?php
 
-namespace Illuminate\Console;
+namespace WPWhales\Console;
 
 use Closure;
-use Illuminate\Console\Events\ArtisanStarting;
-use Illuminate\Contracts\Console\Application as ApplicationContract;
-use Illuminate\Contracts\Container\Container;
-use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Support\ProcessUtils;
+use WPWhales\Console\Events\ArtisanStarting;
+use WPWhales\Contracts\Console\Application as ApplicationContract;
+use WPWhales\Contracts\Container\Container;
+use WPWhales\Contracts\Events\Dispatcher;
+use WPWhales\Support\ProcessUtils;
 use Symfony\Component\Console\Application as SymfonyApplication;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
 use Symfony\Component\Console\Exception\CommandNotFoundException;
@@ -23,14 +23,14 @@ class Application extends SymfonyApplication implements ApplicationContract
     /**
      * The Laravel application instance.
      *
-     * @var \Illuminate\Contracts\Container\Container
+     * @var \WPWhales\Contracts\Container\Container
      */
     protected $laravel;
 
     /**
      * The event dispatcher instance.
      *
-     * @var \Illuminate\Contracts\Events\Dispatcher
+     * @var \WPWhales\Contracts\Events\Dispatcher
      */
     protected $events;
 
@@ -58,8 +58,8 @@ class Application extends SymfonyApplication implements ApplicationContract
     /**
      * Create a new Artisan console application.
      *
-     * @param  \Illuminate\Contracts\Container\Container  $laravel
-     * @param  \Illuminate\Contracts\Events\Dispatcher  $events
+     * @param  \WPWhales\Contracts\Container\Container  $laravel
+     * @param  \WPWhales\Contracts\Events\Dispatcher  $events
      * @param  string  $version
      * @return void
      */
@@ -231,7 +231,7 @@ class Application extends SymfonyApplication implements ApplicationContract
     /**
      * Add a command, resolving through the application.
      *
-     * @param  \Illuminate\Console\Command|string  $command
+     * @param  \WPWhales\Console\Command|string  $command
      * @return \Symfony\Component\Console\Command\Command|null
      */
     public function resolve($command)
@@ -307,7 +307,7 @@ class Application extends SymfonyApplication implements ApplicationContract
     /**
      * Get the Laravel application instance.
      *
-     * @return \Illuminate\Contracts\Foundation\Application
+     * @return \WPWhales\Contracts\Foundation\Application
      */
     public function getLaravel()
     {

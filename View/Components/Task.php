@@ -1,8 +1,8 @@
 <?php
 
-namespace Illuminate\Console\View\Components;
+namespace WPWhales\Console\View\Components;
 
-use Illuminate\Support\InteractsWithTime;
+use WPWhales\Support\InteractsWithTime;
 use Symfony\Component\Console\Output\OutputInterface;
 use Throwable;
 

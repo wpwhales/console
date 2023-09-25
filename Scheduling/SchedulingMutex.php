@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Console\Scheduling;
+namespace WPWhales\Console\Scheduling;
 
 use DateTimeInterface;
 
@@ -9,7 +9,7 @@ interface SchedulingMutex
     /**
      * Attempt to obtain a scheduling mutex for the given event.
      *
-     * @param  \Illuminate\Console\Scheduling\Event  $event
+     * @param  \WPWhales\Console\Scheduling\Event  $event
      * @param  \DateTimeInterface  $time
      * @return bool
      */
@@ -18,7 +18,7 @@ interface SchedulingMutex
     /**
      * Determine if a scheduling mutex exists for the given event.
      *
-     * @param  \Illuminate\Console\Scheduling\Event  $event
+     * @param  \WPWhales\Console\Scheduling\Event  $event
      * @param  \DateTimeInterface  $time
      * @return bool
      */

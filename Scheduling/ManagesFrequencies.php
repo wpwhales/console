@@ -1,8 +1,8 @@
 <?php
 
-namespace Illuminate\Console\Scheduling;
+namespace WPWhales\Console\Scheduling;
 
-use Illuminate\Support\Carbon;
+use WPWhales\Support\Carbon;
 use InvalidArgumentException;
 
 trait ManagesFrequencies

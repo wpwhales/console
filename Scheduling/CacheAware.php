@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Console\Scheduling;
+namespace WPWhales\Console\Scheduling;
 
 interface CacheAware
 {

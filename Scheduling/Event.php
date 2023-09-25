@@ -1,21 +1,21 @@
 <?php
 
-namespace Illuminate\Console\Scheduling;
+namespace WPWhales\Console\Scheduling;
 
 use Closure;
 use Cron\CronExpression;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\ClientInterface as HttpClientInterface;
 use GuzzleHttp\Exception\TransferException;
-use Illuminate\Contracts\Container\Container;
-use Illuminate\Contracts\Debug\ExceptionHandler;
-use Illuminate\Contracts\Mail\Mailer;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Date;
-use Illuminate\Support\Reflector;
-use Illuminate\Support\Stringable;
-use Illuminate\Support\Traits\Macroable;
-use Illuminate\Support\Traits\ReflectsClosures;
+use WPWhales\Contracts\Container\Container;
+use WPWhales\Contracts\Debug\ExceptionHandler;
+use WPWhales\Contracts\Mail\Mailer;
+use WPWhales\Support\Arr;
+use WPWhales\Support\Facades\Date;
+use WPWhales\Support\Reflector;
+use WPWhales\Support\Stringable;
+use WPWhales\Support\Traits\Macroable;
+use WPWhales\Support\Traits\ReflectsClosures;
 use Psr\Http\Client\ClientExceptionInterface;
 use Symfony\Component\Process\Process;
 use Throwable;
@@ -153,7 +153,7 @@ class Event
     /**
      * The event mutex implementation.
      *
-     * @var \Illuminate\Console\Scheduling\EventMutex
+     * @var \WPWhales\Console\Scheduling\EventMutex
      */
     public $mutex;
 
@@ -169,7 +169,7 @@ class Event
      *
      * Utilized by sub-minute repeated events.
      *
-     * @var \Illuminate\Support\Carbon|null
+     * @var \WPWhales\Support\Carbon|null
      */
     protected $lastChecked;
 
@@ -183,7 +183,7 @@ class Event
     /**
      * Create a new event instance.
      *
-     * @param  \Illuminate\Console\Scheduling\EventMutex  $mutex
+     * @param  \WPWhales\Console\Scheduling\EventMutex  $mutex
      * @param  string  $command
      * @param  \DateTimeZone|string|null  $timezone
      * @return void
@@ -210,7 +210,7 @@ class Event
     /**
      * Run the given event.
      *
-     * @param  \Illuminate\Contracts\Container\Container  $container
+     * @param  \WPWhales\Contracts\Container\Container  $container
      * @return void
      *
      * @throws \Throwable
@@ -262,7 +262,7 @@ class Event
     /**
      * Run the command process.
      *
-     * @param  \Illuminate\Contracts\Container\Container  $container
+     * @param  \WPWhales\Contracts\Container\Container  $container
      * @return int
      *
      * @throws \Throwable
@@ -283,7 +283,7 @@ class Event
     /**
      * Run the command process.
      *
-     * @param  \Illuminate\Contracts\Container\Container  $container
+     * @param  \WPWhales\Contracts\Container\Container  $container
      * @return int
      */
     protected function execute($container)
@@ -296,7 +296,7 @@ class Event
     /**
      * Mark the command process as finished and run callbacks/cleanup.
      *
-     * @param  \Illuminate\Contracts\Container\Container  $container
+     * @param  \WPWhales\Contracts\Container\Container  $container
      * @param  int  $exitCode
      * @return void
      */
@@ -314,7 +314,7 @@ class Event
     /**
      * Call all of the "before" callbacks for the event.
      *
-     * @param  \Illuminate\Contracts\Container\Container  $container
+     * @param  \WPWhales\Contracts\Container\Container  $container
      * @return void
      */
     public function callBeforeCallbacks(Container $container)
@@ -327,7 +327,7 @@ class Event
     /**
      * Call all of the "after" callbacks for the event.
      *
-     * @param  \Illuminate\Contracts\Container\Container  $container
+     * @param  \WPWhales\Contracts\Container\Container  $container
      * @return void
      */
     public function callAfterCallbacks(Container $container)
@@ -350,7 +350,7 @@ class Event
     /**
      * Determine if the given event should run based on the Cron expression.
      *
-     * @param  \Illuminate\Contracts\Foundation\Application  $app
+     * @param  \WPWhales\Contracts\Foundation\Application  $app
      * @return bool
      */
     public function isDue($app)
@@ -403,7 +403,7 @@ class Event
     /**
      * Determine if the filters pass for the event.
      *
-     * @param  \Illuminate\Contracts\Foundation\Application  $app
+     * @param  \WPWhales\Contracts\Foundation\Application  $app
      * @return bool
      */
     public function filtersPass($app)
@@ -529,7 +529,7 @@ class Event
     /**
      * E-mail the output of the event to the recipients.
      *
-     * @param  \Illuminate\Contracts\Mail\Mailer  $mailer
+     * @param  \WPWhales\Contracts\Mail\Mailer  $mailer
      * @param  array  $addresses
      * @param  bool  $onlyIfOutputExists
      * @return void
@@ -649,7 +649,7 @@ class Event
     /**
      * Get the Guzzle HTTP client to use to send pings.
      *
-     * @param  \Illuminate\Contracts\Container\Container  $container
+     * @param  \WPWhales\Contracts\Container\Container  $container
      * @return \GuzzleHttp\ClientInterface
      */
     protected function getHttpClient(Container $container)
@@ -965,7 +965,7 @@ class Event
      * @param  \DateTimeInterface|string  $currentTime
      * @param  int  $nth
      * @param  bool  $allowCurrentDate
-     * @return \Illuminate\Support\Carbon
+     * @return \WPWhales\Support\Carbon
      */
     public function nextRunDate($currentTime = 'now', $nth = 0, $allowCurrentDate = false)
     {
@@ -986,7 +986,7 @@ class Event
     /**
      * Set the event mutex implementation to be used.
      *
-     * @param  \Illuminate\Console\Scheduling\EventMutex  $mutex
+     * @param  \WPWhales\Console\Scheduling\EventMutex  $mutex
      * @return $this
      */
     public function preventOverlapsUsing(EventMutex $mutex)

@@ -1,10 +1,10 @@
 <?php
 
-namespace Illuminate\Console;
+namespace WPWhales\Console;
 
-use Illuminate\Console\View\Components\Factory;
-use Illuminate\Contracts\Console\Isolatable;
-use Illuminate\Support\Traits\Macroable;
+use WPWhales\Console\View\Components\Factory;
+use WPWhales\Contracts\Console\Isolatable;
+use WPWhales\Support\Traits\Macroable;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -23,7 +23,7 @@ class Command extends SymfonyCommand
     /**
      * The Laravel application instance.
      *
-     * @var \Illuminate\Contracts\Foundation\Application
+     * @var \WPWhales\Contracts\Foundation\Application
      */
     protected $laravel;
 
@@ -219,7 +219,7 @@ class Command extends SymfonyCommand
     /**
      * Get a command isolation mutex instance for the command.
      *
-     * @return \Illuminate\Console\CommandMutex
+     * @return \WPWhales\Console\CommandMutex
      */
     protected function commandIsolationMutex()
     {
@@ -276,7 +276,7 @@ class Command extends SymfonyCommand
     /**
      * Get the Laravel application instance.
      *
-     * @return \Illuminate\Contracts\Foundation\Application
+     * @return \WPWhales\Contracts\Foundation\Application
      */
     public function getLaravel()
     {
@@ -286,7 +286,7 @@ class Command extends SymfonyCommand
     /**
      * Set the Laravel application instance.
      *
-     * @param  \Illuminate\Contracts\Container\Container  $laravel
+     * @param  \WPWhales\Contracts\Container\Container  $laravel
      * @return void
      */
     public function setLaravel($laravel)

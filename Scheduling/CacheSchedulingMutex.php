@@ -1,16 +1,16 @@
 <?php
 
-namespace Illuminate\Console\Scheduling;
+namespace WPWhales\Console\Scheduling;
 
 use DateTimeInterface;
-use Illuminate\Contracts\Cache\Factory as Cache;
+use WPWhales\Contracts\Cache\Factory as Cache;
 
 class CacheSchedulingMutex implements SchedulingMutex, CacheAware
 {
     /**
      * The cache factory implementation.
      *
-     * @var \Illuminate\Contracts\Cache\Factory
+     * @var \WPWhales\Contracts\Cache\Factory
      */
     public $cache;
 
@@ -24,7 +24,7 @@ class CacheSchedulingMutex implements SchedulingMutex, CacheAware
     /**
      * Create a new scheduling strategy.
      *
-     * @param  \Illuminate\Contracts\Cache\Factory  $cache
+     * @param  \WPWhales\Contracts\Cache\Factory  $cache
      * @return void
      */
     public function __construct(Cache $cache)
@@ -35,7 +35,7 @@ class CacheSchedulingMutex implements SchedulingMutex, CacheAware
     /**
      * Attempt to obtain a scheduling mutex for the given event.
      *
-     * @param  \Illuminate\Console\Scheduling\Event  $event
+     * @param  \WPWhales\Console\Scheduling\Event  $event
      * @param  \DateTimeInterface  $time
      * @return bool
      */
@@ -49,7 +49,7 @@ class CacheSchedulingMutex implements SchedulingMutex, CacheAware
     /**
      * Determine if a scheduling mutex exists for the given event.
      *
-     * @param  \Illuminate\Console\Scheduling\Event  $event
+     * @param  \WPWhales\Console\Scheduling\Event  $event
      * @param  \DateTimeInterface  $time
      * @return bool
      */

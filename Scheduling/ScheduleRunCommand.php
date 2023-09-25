@@ -1,19 +1,19 @@
 <?php
 
-namespace Illuminate\Console\Scheduling;
+namespace WPWhales\Console\Scheduling;
 
-use Illuminate\Console\Application;
-use Illuminate\Console\Command;
-use Illuminate\Console\Events\ScheduledTaskFailed;
-use Illuminate\Console\Events\ScheduledTaskFinished;
-use Illuminate\Console\Events\ScheduledTaskSkipped;
-use Illuminate\Console\Events\ScheduledTaskStarting;
-use Illuminate\Contracts\Cache\Repository as Cache;
-use Illuminate\Contracts\Debug\ExceptionHandler;
-use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Date;
-use Illuminate\Support\Sleep;
+use WPWhales\Console\Application;
+use WPWhales\Console\Command;
+use WPWhales\Console\Events\ScheduledTaskFailed;
+use WPWhales\Console\Events\ScheduledTaskFinished;
+use WPWhales\Console\Events\ScheduledTaskSkipped;
+use WPWhales\Console\Events\ScheduledTaskStarting;
+use WPWhales\Contracts\Cache\Repository as Cache;
+use WPWhales\Contracts\Debug\ExceptionHandler;
+use WPWhales\Contracts\Events\Dispatcher;
+use WPWhales\Support\Carbon;
+use WPWhales\Support\Facades\Date;
+use WPWhales\Support\Sleep;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Throwable;
 
@@ -37,14 +37,14 @@ class ScheduleRunCommand extends Command
     /**
      * The schedule instance.
      *
-     * @var \Illuminate\Console\Scheduling\Schedule
+     * @var \WPWhales\Console\Scheduling\Schedule
      */
     protected $schedule;
 
     /**
      * The 24 hour timestamp this scheduler command started running.
      *
-     * @var \Illuminate\Support\Carbon
+     * @var \WPWhales\Support\Carbon
      */
     protected $startedAt;
 
@@ -58,21 +58,21 @@ class ScheduleRunCommand extends Command
     /**
      * The event dispatcher.
      *
-     * @var \Illuminate\Contracts\Events\Dispatcher
+     * @var \WPWhales\Contracts\Events\Dispatcher
      */
     protected $dispatcher;
 
     /**
      * The exception handler.
      *
-     * @var \Illuminate\Contracts\Debug\ExceptionHandler
+     * @var \WPWhales\Contracts\Debug\ExceptionHandler
      */
     protected $handler;
 
     /**
      * The cache store implementation.
      *
-     * @var \Illuminate\Contracts\Cache\Repository
+     * @var \WPWhales\Contracts\Cache\Repository
      */
     protected $cache;
 
@@ -98,10 +98,10 @@ class ScheduleRunCommand extends Command
     /**
      * Execute the console command.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
-     * @param  \Illuminate\Contracts\Events\Dispatcher  $dispatcher
-     * @param  \Illuminate\Contracts\Cache\Repository  $cache
-     * @param  \Illuminate\Contracts\Debug\ExceptionHandler  $handler
+     * @param  \WPWhales\Console\Scheduling\Schedule  $schedule
+     * @param  \WPWhales\Contracts\Events\Dispatcher  $dispatcher
+     * @param  \WPWhales\Contracts\Cache\Repository  $cache
+     * @param  \WPWhales\Contracts\Debug\ExceptionHandler  $handler
      * @return void
      */
     public function handle(Schedule $schedule, Dispatcher $dispatcher, Cache $cache, ExceptionHandler $handler)
@@ -148,7 +148,7 @@ class ScheduleRunCommand extends Command
     /**
      * Run the given single server event.
      *
-     * @param  \Illuminate\Console\Scheduling\Event  $event
+     * @param  \WPWhales\Console\Scheduling\Event  $event
      * @return void
      */
     protected function runSingleServerEvent($event)
@@ -165,7 +165,7 @@ class ScheduleRunCommand extends Command
     /**
      * Run the given event.
      *
-     * @param  \Illuminate\Console\Scheduling\Event  $event
+     * @param  \WPWhales\Console\Scheduling\Event  $event
      * @return void
      */
     protected function runEvent($event)
@@ -216,7 +216,7 @@ class ScheduleRunCommand extends Command
     /**
      * Run the given repeating events.
      *
-     * @param  \Illuminate\Support\Collection<\Illuminate\Console\Scheduling\Event>  $events
+     * @param  \WPWhales\Support\Collection<\WPWhales\Console\Scheduling\Event>  $events
      * @return void
      */
     protected function repeatEvents($events)
@@ -265,7 +265,7 @@ class ScheduleRunCommand extends Command
      */
     protected function shouldInterrupt()
     {
-        return $this->cache->get('illuminate:schedule:interrupt', false);
+        return $this->cache->get('WPWhales:schedule:interrupt', false);
     }
 
     /**
@@ -275,6 +275,6 @@ class ScheduleRunCommand extends Command
      */
     protected function clearInterruptSignal()
     {
-        $this->cache->forget('illuminate:schedule:interrupt');
+        $this->cache->forget('WPWhales:schedule:interrupt');
     }
 }

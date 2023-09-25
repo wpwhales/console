@@ -1,8 +1,8 @@
 <?php
 
-namespace Illuminate\Console\Events;
+namespace WPWhales\Console\Events;
 
-use Illuminate\Console\Scheduling\Event;
+use WPWhales\Console\Scheduling\Event;
 use Throwable;
 
 class ScheduledTaskFailed
@@ -10,7 +10,7 @@ class ScheduledTaskFailed
     /**
      * The scheduled event that failed.
      *
-     * @var \Illuminate\Console\Scheduling\Event
+     * @var \WPWhales\Console\Scheduling\Event
      */
     public $task;
 
@@ -24,7 +24,7 @@ class ScheduledTaskFailed
     /**
      * Create a new event instance.
      *
-     * @param  \Illuminate\Console\Scheduling\Event  $task
+     * @param  \WPWhales\Console\Scheduling\Event  $task
      * @param  \Throwable  $exception
      * @return void
      */

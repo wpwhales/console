@@ -1,8 +1,8 @@
 <?php
 
-namespace Illuminate\Console\Scheduling;
+namespace WPWhales\Console\Scheduling;
 
-use Illuminate\Console\Command;
+use WPWhales\Console\Command;
 
 class ScheduleClearCacheCommand extends Command
 {
@@ -23,7 +23,7 @@ class ScheduleClearCacheCommand extends Command
     /**
      * Execute the console command.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @param  \WPWhales\Console\Scheduling\Schedule  $schedule
      * @return void
      */
     public function handle(Schedule $schedule)

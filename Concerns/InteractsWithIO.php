@@ -1,11 +1,11 @@
 <?php
 
-namespace Illuminate\Console\Concerns;
+namespace WPWhales\Console\Concerns;
 
 use Closure;
-use Illuminate\Console\OutputStyle;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Support\Str;
+use WPWhales\Console\OutputStyle;
+use WPWhales\Contracts\Support\Arrayable;
+use WPWhales\Support\Str;
 use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;
@@ -18,7 +18,7 @@ trait InteractsWithIO
     /**
      * The console components factory.
      *
-     * @var \Illuminate\Console\View\Components\Factory
+     * @var \WPWhales\Console\View\Components\Factory
      *
      * @internal This property is not meant to be used or overwritten outside the framework.
      */
@@ -34,7 +34,7 @@ trait InteractsWithIO
     /**
      * The output interface implementation.
      *
-     * @var \Illuminate\Console\OutputStyle
+     * @var \WPWhales\Console\OutputStyle
      */
     protected $output;
 
@@ -225,7 +225,7 @@ trait InteractsWithIO
      * Format input to textual table.
      *
      * @param  array  $headers
-     * @param  \Illuminate\Contracts\Support\Arrayable|array  $rows
+     * @param  \WPWhales\Contracts\Support\Arrayable|array  $rows
      * @param  \Symfony\Component\Console\Helper\TableStyle|string  $tableStyle
      * @param  array  $columnStyles
      * @return void
@@ -405,7 +405,7 @@ trait InteractsWithIO
     /**
      * Set the output interface implementation.
      *
-     * @param  \Illuminate\Console\OutputStyle  $output
+     * @param  \WPWhales\Console\OutputStyle  $output
      * @return void
      */
     public function setOutput(OutputStyle $output)
@@ -444,7 +444,7 @@ trait InteractsWithIO
     /**
      * Get the output implementation.
      *
-     * @return \Illuminate\Console\OutputStyle
+     * @return \WPWhales\Console\OutputStyle
      */
     public function getOutput()
     {
@@ -454,7 +454,7 @@ trait InteractsWithIO
     /**
      * Get the output component factory implementation.
      *
-     * @return \Illuminate\Console\View\Components\Factory
+     * @return \WPWhales\Console\View\Components\Factory
      */
     public function outputComponents()
     {
